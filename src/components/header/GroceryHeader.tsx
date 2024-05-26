@@ -9,7 +9,7 @@ import Container from "../Container";
 import FlexBox from "../FlexBox";
 import Icon from "../icon/Icon";
 import MiniCart from "../mini-cart/MiniCart";
-import Login from "../sessions/Login";
+import Register from "../sessions/Signup";
 import Sidenav from "../sidenav/Sidenav";
 import StyledHeader from "./HeaderStyle";
 import UserLoginDialog from "./UserLoginDialog";
@@ -80,7 +80,7 @@ const GroceryHeader: React.FC<HeaderProps> = ({ className }) => {
             }
           >
             <Box>
-              <Login />
+              <Register />
             </Box>
           </UserLoginDialog>
 

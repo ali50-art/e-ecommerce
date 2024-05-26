@@ -10,7 +10,7 @@ import FlexBox from "../FlexBox";
 import Icon from "../icon/Icon";
 import MiniCart from "../mini-cart/MiniCart";
 import SearchBox from "../search-box/SearchBox";
-import Login from "../sessions/Login";
+import Register from "../sessions/Signup";
 import Sidenav from "../sidenav/Sidenav";
 import { Tiny } from "../Typography";
 import StyledHeader from "./HeaderStyle";
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ isFixed, className }) => {
             }
           >
             <Box>
-              <Login />
+              <Register />
             </Box>
           </UserLoginDialog>
 
