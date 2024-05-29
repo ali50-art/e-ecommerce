@@ -83,29 +83,58 @@ const Header: React.FC<HeaderProps> = ({ isFixed, className }) => {
           <SearchBox />
         </FlexBox>
 
-        <FlexBox className="header-right" alignItems="center">
-          <UserLoginDialog
-            handle={
-              <IconButton ml="1rem" bg="gray.200" p="8px">
+        {typeof window !== "undefined" ? (
+          !!localStorage.getItem("token") ? (
+            <FlexBox className="header-right" alignItems="center">
+              <IconButton
+                ml="1rem"
+                bg="gray.200"
+                p="8px"
+                onClick={() => {
+                  window.location.href =
+                    "http://localhost:3001?token=" +
+                    localStorage.getItem("token");
+                }}
+              >
                 <Icon size="28px">user</Icon>
               </IconButton>
-            }
-          >
-            <Box>
-              <Register />
-            </Box>
-          </UserLoginDialog>
-
-          <Sidenav
-            handle={cartHandle}
-            position="right"
-            open={open}
-            width={380}
-            toggleSidenav={toggleSidenav}
-          >
-            <MiniCart toggleSidenav={toggleSidenav} />
-          </Sidenav>
-        </FlexBox>
+              <Sidenav
+                handle={cartHandle}
+                position="right"
+                open={open}
+                width={380}
+                toggleSidenav={toggleSidenav}
+              >
+                <MiniCart toggleSidenav={toggleSidenav} />
+              </Sidenav>
+            </FlexBox>
+          ) : (
+            <FlexBox className="header-right" alignItems="center">
+              <UserLoginDialog
+                handle={
+                  <IconButton ml="1rem" bg="gray.200" p="8px">
+                    <Icon size="28px">user</Icon>
+                  </IconButton>
+                }
+              >
+                <Box>
+                  <Register />
+                </Box>
+              </UserLoginDialog>
+              <Sidenav
+                handle={cartHandle}
+                position="right"
+                open={open}
+                width={380}
+                toggleSidenav={toggleSidenav}
+              >
+                <MiniCart toggleSidenav={toggleSidenav} />
+              </Sidenav>
+            </FlexBox>
+          )
+        ) : (
+          ""
+        )}
       </Container>
     </StyledHeader>
   );

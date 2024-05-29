@@ -14,5 +14,7 @@ export const register = async (data) => {
       },
     }
   );
+  localStorage.setItem("token", response.data.token);
+  localStorage.setItem("user", localStorage.data.user);
   return response.data;
 };
