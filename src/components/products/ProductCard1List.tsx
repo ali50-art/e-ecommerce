@@ -14,13 +14,9 @@ export interface ProductCard1ListProps {
 }
 
 const ProductCard1List: React.FC<ProductCard1ListProps> = ({ id, prod }) => {
-  console.log(id);
-
   const [data, setData] = useState(null);
   const getProducts = async () => {
     if (id) {
-      console.log({ id });
-
       if (prod == "second-category") {
         const res = await axios.get(
           `http://localhost:5001/prod/production/for/user/add/test/second/${id}`
@@ -49,12 +45,11 @@ const ProductCard1List: React.FC<ProductCard1ListProps> = ({ id, prod }) => {
   useEffect(() => {
     getProducts();
   }, []);
-  console.log("data : ", data);
 
   return (
     <div>
       <Grid container spacing={6}>
-        {productDatabase.slice(95, 104).map((item, ind) => (
+        {data?.map((item, ind) => (
           <Grid item lg={4} sm={6} xs={12} key={ind}>
             <ProductCard1 {...item} />
           </Grid>
@@ -66,10 +61,7 @@ const ProductCard1List: React.FC<ProductCard1ListProps> = ({ id, prod }) => {
         justifyContent="space-between"
         alignItems="center"
         mt="32px"
-      >
-        <SemiSpan>Showing 1-9 of 1.3k Products</SemiSpan>
-        <Pagination pageCount={10} />
-      </FlexBox>
+      ></FlexBox>
     </div>
   );
 };
