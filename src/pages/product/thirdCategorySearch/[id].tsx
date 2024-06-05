@@ -102,9 +102,9 @@ const ProductSearchResult = () => {
 
         <Grid item lg={9} xs={12}>
           {view === "grid" ? (
-            <ProductCard1List id={id} />
+            <ProductCard1List prod="third-category" id={id} />
           ) : (
-            <ProductCard9List id={id} />
+            <ProductCard9List prod="third-category" id={id} />
           )}
         </Grid>
       </Grid>

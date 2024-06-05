@@ -45,24 +45,6 @@ const Home2 = () => {
         <Box mb="3rem">
           <GrocerySection3 />
         </Box>
-        <Box mb="3rem">
-          <GrocerySection4 />
-        </Box>
-        <Box mb="3rem">
-          <GrocerySection5 />
-        </Box>
-        <Box mb="3rem">
-          <GrocerySection6 />
-        </Box>
-        <Box mb="3rem">
-          <GrocerySection7 />
-        </Box>
-        <Box mb="3rem">
-          <GrocerySection8 />
-        </Box>
-        <Box mb="3rem">
-          <GrocerySection9 />
-        </Box>
 
         <GrocerFooter />
       </Box>

@@ -7,7 +7,7 @@ import { SemiSpan } from "../Typography";
 
 export interface ProductCard9ListProps {}
 
-const ProductCard9List: React.FC<ProductCard9ListProps> = () => {
+const ProductCard9List: React.FC<ProductCard9ListProps> = ({ id }) => {
   return (
     <div>
       {productDatabase.slice(95, 104).map((item, ind) => (
